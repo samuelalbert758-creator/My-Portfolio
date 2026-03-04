@@ -28,7 +28,7 @@ const Header = () => {
             </svg>
           </div>
         )}
-        <div className="lg:flex hidden sm:hidden md:flex items-center space-x-3 sm:space-x-6 ">
+        <div className="hidden md:flex items-center space-x-3 sm:space-x-6 ">
           <p className="cursor-pointer"> HOME </p>
           <p> ABOUT </p>
           <p> SKILLS </p>
@@ -38,7 +38,7 @@ const Header = () => {
       </div>
 
       <div
-        className={`absolute top-4 left-0 right-0 mx-5 px-4 transform transition-all duration-300 ease-in-out bg-white/20 lg:hidden md:hidden py-5 flex flex-col divide-y divide-white/30 rounded-md ${isOpen ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}
+        className={`absolute top-full z-50 mt-2 left-0 right-0 mx-5 px-4 transform origin-top transition-all duration-300 ease-in-out bg-white/20 lg:hidden md:hidden py-5 flex flex-col divide-y divide-white/30 rounded-md ${isOpen ? "scale-100 opacity-100" : "scale-0 opacity-0 pointer-events-none"}`}
       >
         <div className="flex justify-between items-center pb-4">
           <p className="text-2xl sm:text-xl lg:text-2xl font-semibold text-gray-100">
