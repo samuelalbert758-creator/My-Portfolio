@@ -5,7 +5,7 @@ import { useState } from "react";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <header className="relative z-10 shadow-[0_8px_20px_rgba(0,0,0,0.08)]">
+    <header className="relative z-10">
       <div className="relative max-w-7xl mx-auto py-4 px-4 sm:px-6 flex items-center justify-between">
         {!isOpen && (
           <h1 className="text-2xl sm:text-xl lg:text-2xl font-semibold text-gray-100">
