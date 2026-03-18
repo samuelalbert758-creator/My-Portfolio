@@ -35,6 +35,6 @@ export async function POST(req: Request) {
   });
   } catch (error) {
     console.error(error);
-    return Response.json({ err: "Please check your internet connection." }, { status: 500 });
+    return Response.json({ text: "Please check your internet connection." }, { status: 500 });
   }
 }

@@ -62,17 +62,17 @@ export default function Chat() {
               msg.role === "user" ? "justify-end" : "justify-start"
             }`}
           >
-            <div className="min-w-0 max-w-full break-words">
+            <div className="min-w-0 max-w-full wrap-break-word">
               {/* USER MESSAGE */}
               {msg.role === "user" && (
-                <div className="px-4 py-2 shadow-sm shadow-white rounded-2xl bg-black text-white break-words whitespace-pre-wrap">
+                <div className="px-4 py-2 shadow-sm shadow-white rounded-2xl bg-black text-white wrap-break-word whitespace-pre-wrap">
                   {msg.text}
                 </div>
               )}
 
               {/* AI MESSAGE */}
               {msg.role === "ai" && (
-                <div className="px-4 py-2 rounded-2xl text-white break-words">
+                <div className="px-4 py-2 rounded-2xl text-white wrap-break-word">
                   <ReactMarkdown
                     components={{
                       code({ inline, className, children }: any) {
@@ -92,7 +92,7 @@ export default function Chat() {
                             </SyntaxHighlighter>
                           </div>
                         ) : (
-                          <code className="bg-black px-1 py-0.5 rounded break-words">
+                          <code className="bg-black px-1 py-0.5 rounded wrap-break-word">
                             {children}
                           </code>
                         );
@@ -119,7 +119,7 @@ export default function Chat() {
         />
         <button
           onClick={sendMessage}
-          className="bg-black text-white px-4 py-2 rounded-lg"
+          className="bg-black shadow-sm shadow-gray-500 text-white px-4 py-2 rounded-lg"
         >
           Send
         </button>
