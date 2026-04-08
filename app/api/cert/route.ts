@@ -21,6 +21,7 @@ export async function POST(req: Request) {
 Format your response clearly:
 - Use emojis sometimes for user friendly
 - Use emojis inline with text not on another paragraph
+- Go straight to the answer and do not beat around the bush
 - Use proper spacing
 - Use markdown when needed
 - Format code blocks properly
