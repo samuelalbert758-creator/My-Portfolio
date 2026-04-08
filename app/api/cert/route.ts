@@ -16,25 +16,41 @@ export async function POST(req: Request) {
       model: "gemini-2.5-flash",
     });
 
-    const result = await model.generateContentStream(message);
+    // ✅ Improved prompt for clean formatting
+    const prompt = `
+Format your response clearly:
+- Use emojis sometimes for user friendly
+- Use paragraphs
+- Add spacing between sections
+- Use markdown when needed
+- Format code blocks properly
+- Avoid writing everything in one line
 
-  const encoder = new TextEncoder();
+User: ${message}
+`;
 
-  const stream = new ReadableStream({
-    async start(controller) {
-      for await (const chunk of result.stream) {
-        const text = chunk.text();
-        controller.enqueue(encoder.encode(text));
-      }
-      controller.close();
-    },
-  });
+    const result = await model.generateContentStream(prompt);
 
-  return new Response(stream, {
-    headers: { "Content-Type": "text/plain" },
-  });
+    const encoder = new TextEncoder();
+
+    const stream = new ReadableStream({
+      async start(controller) {
+        for await (const chunk of result.stream) {
+          const text = chunk.text();
+          controller.enqueue(encoder.encode(text));
+        }
+        controller.close();
+      },
+    });
+
+    return new Response(stream, {
+      headers: { "Content-Type": "text/plain" },
+    });
   } catch (error) {
     console.error(error);
-    return Response.json({ text: "Please check your internet connection." }, { status: 500 });
+    return Response.json(
+      { text: "Please check your internet connection." },
+      { status: 500 }
+    );
   }
 }
