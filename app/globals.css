@@ -28,7 +28,7 @@
 
 body {
   background: black;
-  color: var(--foreground);
+  color: white;
   font-family: 'Montserrat', sans-serif;
 }
 html{
