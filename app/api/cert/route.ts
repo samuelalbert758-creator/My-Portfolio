@@ -20,11 +20,10 @@ export async function POST(req: Request) {
     const prompt = `
 Format your response clearly:
 - Use emojis sometimes for user friendly
-- Use paragraphs
-- Add spacing between sections
+- Use proper spacing
 - Use markdown when needed
 - Format code blocks properly
-- Avoid writing everything in one line
+- Write text inline and use paragraphs when needed
 
 User: ${message}
 `;
