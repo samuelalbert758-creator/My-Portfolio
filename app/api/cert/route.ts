@@ -20,6 +20,7 @@ export async function POST(req: Request) {
     const prompt = `
 Format your response clearly:
 - Use emojis sometimes for user friendly
+- Use emojis inline with text not on another paragraph
 - Use proper spacing
 - Use markdown when needed
 - Format code blocks properly
