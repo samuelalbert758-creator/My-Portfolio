@@ -1,5 +1,5 @@
 "use client";
-
+import { motion } from "framer-motion";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -167,7 +167,12 @@ export default function Chat() {
           disabled={loading}
           className="bg-black shadow-sm shadow-gray-500 text-white px-4 py-2 rounded-lg disabled:opacity-50"
         >
-          {loading ? "Thinking..." : "Send"}
+          {loading ? <motion.div
+            initial={{rotate:"0deg"}}
+            animate={{ rotate: "360deg" }}
+            transition={{duration:.2}}
+                      className="h-5 w-5 rounded-full border-4 border-gray-300 border-t-gray-600 border-b-gray-600"
+          ></motion.div> : "Send"}
         </button>
       </div>
     </div>

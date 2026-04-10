@@ -57,18 +57,18 @@ export default function Page() {
             learning new technologies and building projects that makes a
             difference.
           </p>
-          <div className="flex flex-1 gap-6 justify-center mt-6">
-            <div className="bg-white/20 py-2 px-8 w-64 text-sm rounded-md">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center text-center items-center mt-6">
+            <div className="bg-white/20 py-2 px-8 text-sm rounded-md">
               <span className="text-3xl font-semibold">+5</span> <br /> Years of
               Experience
             </div>
-            <div className="bg-white/20 py-2 px-8 w-64 text-sm rounded-md">
+            <div className="bg-white/20 py-2 px-8 text-sm rounded-md">
               <span className="text-3xl font-semibold">+20</span> <br /> Completed Projects
             </div>
-            <div className="bg-white/20 py-2 px-8 w-64 text-sm rounded-md">
-              <span className="text-3xl font-semibold">6</span> <br /> Programming Languages Known
+            <div className="bg-white/20 py-2 px-8 text-sm rounded-md">
+              <span className="text-3xl font-semibold">6</span> <br /> Languages
             </div>
-            <div className="bg-white/20 py-2 px-8 w-64 text-sm rounded-md">
+            <div className="bg-white/20 lg:hidden py-2 px-8 text-sm rounded-md">
               <span className="text-3xl font-semibold">+15</span> <br /> Satisfied Clients
             </div>
           </div>
